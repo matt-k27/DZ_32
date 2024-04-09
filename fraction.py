@@ -23,17 +23,17 @@ class Fraction:
     def __eq__(self, other):
         if not isinstance(other, Fraction):
             return False
-        return self.a * other.b == other.a * self.b
+        return (self.a * other.b) / (self.b * other.b) == other.a * self.b / (self.b * other.b)
 
     def __gt__(self, other):
         if not isinstance(other, Fraction):
             raise TypeError("Unsupported operand type")
-        return self.a * other.b > other.a * self.b
+        return (self.a * other.b) / (self.b * other.b) > other.a * self.b / (self.b * other.b)
 
     def __lt__(self, other):
         if not isinstance(other, Fraction):
             raise TypeError("Unsupported operand type")
-        return self.a * other.b < other.a * self.b
+        return (self.a * other.b) / (self.b * other.b) < other.a * self.b / (self.b * other.b)
 
     def __str__(self):
         return f"Fraction: {self.a}, {self.b}"
