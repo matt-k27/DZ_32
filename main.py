@@ -7,6 +7,11 @@ try:
 except TypeError as e:
     print(e)
 
+try:
+    testVar = Fraction(2, 0)
+except ValueError as e:
+    print(e)
+
 f_a = Fraction(2, 3)
 f_b = Fraction(3, 6)
 f_c = f_b + f_a
